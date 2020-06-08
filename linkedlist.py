@@ -6,6 +6,19 @@ class LinkedList:
         self.head = Node()
         self.length = 0
 
+    def push(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+        self.length += 1
+
+    def pop(self):
+        if (self.head != None):
+            temp_node = self.head
+            self.head = temp_node.next
+            temp_node = None
+            self.length -= 1
+
     def append(self, data):
         new_node = Node(data)
         cur = self.head
@@ -39,4 +52,7 @@ class LinkedList:
 # test.append(1)
 # test.append(2)
 # test.append(3)
+# test.display()
+
+# test.pop()
 # test.display()
